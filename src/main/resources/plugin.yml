@@ -1,0 +1,45 @@
+name: CoreTools
+version: ${project.version}
+main: dev.coretools.CoreTools
+api-version: '1.21'
+description: Mob and animal head drops that sell for money, plus /heal and /feed
+depend: [Vault]
+softdepend: [EssentialsX]
+
+commands:
+  heal:
+    description: Restore your health (or another player's)
+    usage: /heal [player]
+  feed:
+    description: Restore your hunger (or another player's)
+    usage: /feed [player]
+  sellheads:
+    description: Sell the mob heads in your inventory
+    usage: /sellheads [hand]
+    aliases: [sellhead]
+  coretools:
+    description: CoreTools admin command
+    usage: /coretools reload
+
+permissions:
+  coretools.heal:
+    description: Use /heal on yourself
+    default: op
+  coretools.heal.others:
+    description: Use /heal on other players
+    default: op
+  coretools.feed:
+    description: Use /feed on yourself
+    default: op
+  coretools.feed.others:
+    description: Use /feed on other players
+    default: op
+  coretools.cooldown.bypass:
+    description: Ignore /heal and /feed cooldowns
+    default: op
+  coretools.sell:
+    description: Use /sellheads
+    default: true
+  coretools.admin:
+    description: Use /coretools reload
+    default: op
